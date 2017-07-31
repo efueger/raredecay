@@ -2,7 +2,7 @@ env:
   global:
     - CC_TEST_REPORTER_ID=130d6a2c23629531d2a6258311d5e7c98a627220f4958ef400dcc57091a5e114
     - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
-language: ruby
+## language: ruby
 rvm:
   - 2.2.0
 before_script:
@@ -30,6 +30,7 @@ python:
 #virtualenv:
 #  system_site_packages: true
 before_install:
+- ruby
 - sudo apt-get -qq update
 #- sudo apt-get -o Dpkg::Options::="--force-confold" upgrade -q -y --force-yes  # && apt-get -o Dpkg::Options::="--force-confold" dist-upgrade -q -y --force-yes
 
